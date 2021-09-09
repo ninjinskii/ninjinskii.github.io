@@ -13,6 +13,7 @@
     "lintfix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
+    "@mdi/js": "^6.1.95",
     "@nuxtjs/i18n": "^7.0.3",
     "@nuxtjs/vuetify": "^1.11.3",
     "nuxt": "^2.14.9"
