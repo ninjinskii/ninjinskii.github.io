@@ -34,11 +34,7 @@ export default {
         {
           name: "Cavity",
           technos: ["Android", "Java", "SQLite", "XML"],
-          bullets: [
-            "Bullet point number 1",
-            "Bullet point number 2",
-            "Bullet point number 3",
-          ],
+          bullets: ["Bullet point number 1", "Bullet point number 3"],
           code: "http://",
           demo: "/cavity",
         },
