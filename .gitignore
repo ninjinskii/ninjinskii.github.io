@@ -1,0 +1,12 @@
+# Node
+node_modules
+npm-debug.log
+
+# Nuxt
+.nuxt
+dist
+server.crt
+server.key
+
+# VSCode
+.history

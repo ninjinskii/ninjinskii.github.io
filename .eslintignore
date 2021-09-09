@@ -1,0 +1,12 @@
+# Node
+node_modules
+npm-debug.log
+
+# Nuxt
+.nuxt
+dist
+static/sw.js
+
+# VSCode
+.settings.json
+.history
