@@ -3,7 +3,7 @@
     <v-btn class="ma-8" icon x-large @click="$router.go(-1)">X</v-btn>
     <v-container>
       <v-row>
-        <v-col cols="7">
+        <v-col cols="12" md="7">
           <h2 style="width: 100%">{{ project.name }}</h2>
           <v-chip-group column>
             <v-chip v-for="(techno, index) in project.technos" :key="index">
@@ -15,10 +15,10 @@
             forcément être très long
           </p>
         </v-col>
-        <v-col cols="5">
+        <v-col cols="12" md="5" order="first" order-md="12">
           <v-img
             src="/images/aviatorjk_bark.jpg"
-            class="rounded-circle mx-a"
+            class="rounded-circle mx-auto"
             height="196px"
             width="196px"
           />
