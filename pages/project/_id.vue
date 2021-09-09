@@ -1,5 +1,5 @@
 <template>
-  <top-header />
+  <project-header />
 </template>
 <script>
 export default {

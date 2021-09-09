@@ -19,7 +19,13 @@
     <v-card-actions>
       <v-spacer />
       <v-btn outlined color="primary" class="mr-4"> Code </v-btn>
-      <v-btn color="primary" class="mr-4" outlined nuxt to="/grtw">
+      <v-btn
+        color="primary"
+        class="mr-4"
+        outlined
+        nuxt
+        :to="`/project/${project.id}`"
+      >
         Demo
       </v-btn>
     </v-card-actions>

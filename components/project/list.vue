@@ -16,29 +16,12 @@
 </template>
 
 <script>
+import projects from "~/assets/data/projects.js";
+
 export default {
   data() {
     return {
-      projects: [
-        {
-          name: "Ginko Real Time Widget",
-          technos: ["Android", "Kotlin", "SQLite", "XML"],
-          bullets: [
-            "Bullet point number 1",
-            "Bullet point number 2",
-            "Bullet point number 3",
-          ],
-          code: "http://",
-          demo: "/ginko",
-        },
-        {
-          name: "Cavity",
-          technos: ["Android", "Java", "SQLite", "XML"],
-          bullets: ["Bullet point number 1", "Bullet point number 3"],
-          code: "http://",
-          demo: "/cavity",
-        },
-      ],
+      projects,
     };
   },
 };
