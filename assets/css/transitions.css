@@ -1,15 +1,10 @@
 /* Shared axis Z transition, forward */
 .shared-enter-active {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   transition: all 300ms;
 }
 
 .shared-leave-active {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   transition: all 200ms;
@@ -34,19 +29,14 @@
 
 /* Shared axis Z transition, backward */
 .shared-enter-active {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   transition: all 300ms;
 }
 
 .shared-reverse-leave-active {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
-  transition: all 200ms;
+  transition: all 300ms;
 }
 
 .shared-reverse-enter {
