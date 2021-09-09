@@ -1,21 +1,35 @@
 <template>
   <div>
-    <v-btn class="ma-8" icon x-large @click="$router.go(-1)">X</v-btn>
+    <v-btn
+      class="mt-4 ml-4 mt-md-8 ml-md-8 mb-2 bordered"
+      color="primary"
+      icon
+      x-large
+      @click="$router.go(-1)"
+      >X</v-btn
+    >
     <v-container>
       <v-row>
-        <v-col cols="12" md="7">
-          <h2 style="width: 100%">{{ project.name }}</h2>
+        <v-col cols="12" md="6">
+          <h2 class="mb-n3 text-center text-md-left" style="width: 100%">
+            {{ project.name }}
+          </h2>
+          <div class="text-overline text--disabled text-center text-md-left">
+            Horaires en temps réel des bus de Besançon (25)
+          </div>
           <v-chip-group column>
             <v-chip v-for="(techno, index) in project.technos" :key="index">
               {{ techno }}
             </v-chip>
           </v-chip-group>
-          <p>
-            Mon texte sur l'application Ginko Real Time Widget. Il ne doit pas
-            forcément être très long
+          <p class="text--medium">
+            Cette application permet d'enregistrer les trajets les plus
+            fréquents que l'utilisateur effectue pour ensuite lui afficher les
+            temps de passages des bus.
           </p>
+          <v-btn class="mt-4" outlined>Voir le code</v-btn>
         </v-col>
-        <v-col cols="12" md="5" order="first" order-md="12">
+        <v-col cols="12" md="6" order="first" order-md="12">
           <v-img
             src="/images/aviatorjk_bark.jpg"
             class="rounded-circle mx-auto"
@@ -38,3 +52,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.bordered {
+  border: solid 1px rgba(255, 255, 255, 0.6);
+}
+</style>

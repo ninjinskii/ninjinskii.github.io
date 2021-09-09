@@ -1,3 +1,4 @@
+// TODO: replace text with translatable keys
 export default [
   {
     id: 1,

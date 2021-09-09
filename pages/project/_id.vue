@@ -1,5 +1,8 @@
 <template>
-  <project-header />
+  <div>
+    <project-header />
+    <project-details />
+  </div>
 </template>
 <script>
 export default {

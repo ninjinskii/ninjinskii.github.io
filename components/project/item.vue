@@ -1,5 +1,5 @@
 <template>
-  <v-card shaped>
+  <v-card>
     <v-img src="/images/aviatorjk_bark.jpg" height="196px" />
     <v-card-title>
       <h3 style="width: 100%">{{ project.name }}</h3>
