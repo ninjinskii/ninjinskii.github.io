@@ -1,13 +1,14 @@
 <template>
   <div>
     <v-btn
-      class="mt-4 ml-4 mt-md-8 ml-md-8 mb-2 bordered"
+      class="mt-4 ml-4 mt-md-8 ml-md-8 mb-2"
       color="primary"
       icon
       x-large
       @click="$router.go(-1)"
-      >X</v-btn
     >
+      <v-icon x-large> {{ mdiArrowLeft }} </v-icon>
+    </v-btn>
     <v-container>
       <v-row>
         <v-col cols="12" md="6">
@@ -27,7 +28,12 @@
             fréquents que l'utilisateur effectue pour ensuite lui afficher les
             temps de passages des bus.
           </p>
-          <v-btn class="mt-4" outlined>Voir le code</v-btn>
+          <v-btn class="mt-4" outlined>
+            Voir le code
+            <v-icon right>
+              {{ mdiOpenInNew }}
+            </v-icon>
+          </v-btn>
         </v-col>
         <v-col cols="12" md="6" order="first" order-md="12">
           <v-img
@@ -43,18 +49,15 @@
 </template>
 <script>
 import projects from "~/assets/data/projects.js";
+import { mdiArrowLeft, mdiOpenInNew } from "@mdi/js";
 
 export default {
   data() {
     return {
+      mdiArrowLeft,
+      mdiOpenInNew,
       project: projects.find((project) => project.id == this.$route.params.id),
     };
   },
 };
 </script>
-
-<style scoped>
-.bordered {
-  border: solid 1px rgba(255, 255, 255, 0.6);
-}
-</style>
