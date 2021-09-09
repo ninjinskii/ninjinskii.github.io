@@ -2,10 +2,14 @@
   <v-container>
     <h2 class="my-16">{{ $t("home__projects") }}</h2>
     <v-row>
-      <v-col v-for="(project, index) in projects" :key="index" cols="6">
+      <v-col
+        v-for="(project, index) in projects"
+        :key="index"
+        cols="5"
+        :offset-md="index % 2 === 0 ? '0' : '2'"
+      >
         <project-item :project="project" />
       </v-col>
-      <v-col cols="4"> </v-col>
     </v-row>
   </v-container>
 </template>
