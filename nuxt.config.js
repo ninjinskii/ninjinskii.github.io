@@ -28,7 +28,10 @@ module.exports = {
     link: [{ rel: "favicon", type: "image/x-icon", href: "favicon.ico" }],
   },
   loading: { color: "#ffffff" },
-  css: [{ src: "@/assets/css/main.css" }],
+  css: [
+    { src: "@/assets/css/main.css" },
+    { src: "@/assets/css/transitions.css" },
+  ],
   // plugins
   modules: ["@nuxtjs/i18n"],
   buildModules: ["@nuxtjs/vuetify"],
@@ -68,12 +71,13 @@ module.exports = {
   vuetify: {
     defaultAssets: false,
     theme: {
-      themes: {
-        light: {
-          primary: "#55e223",
-          secondary: "#333333",
-        },
-      },
+      dark: true,
+      // themes: {
+      //   light: {
+      //     primary: "#55e223",
+      //     secondary: "#333333",
+      //   },
+      // },
     },
   },
   // Serve without traefik in https
