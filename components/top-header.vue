@@ -1,23 +1,35 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="8">
+      <v-col cols="12" md="8">
         <h1>Bailly Louis</h1>
         <p>Ma petite phrase</p>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <v-row>
           <v-col cols="6">
-            <v-btn class="d-block mx-auto" x-large icon>
-              <v-icon x-large>{{ mdiGithub }}</v-icon>
-            </v-btn>
-            <p class="text-center text-overline">{{ $t("home__github") }}</p>
+            <a
+              class="text--primary"
+              href="https://github.com/ninjinskii"
+              target="blank"
+            >
+              <v-btn class="d-block mx-auto" x-large icon>
+                <v-icon x-large>{{ mdiGithub }}</v-icon>
+              </v-btn>
+              <p class="text-center text-overline">{{ $t("home__github") }}</p>
+            </a>
           </v-col>
           <v-col cols="6">
-            <v-btn class="d-block mx-auto" x-large icon>
-              <v-icon x-large>{{ mdiFileOutline }}</v-icon>
-            </v-btn>
-            <p class="text-center text-overline">{{ $t("home__resume") }}</p>
+            <a
+              class="text--primary"
+              href="https://github.com/ninjinskii"
+              target="blank"
+            >
+              <v-btn class="d-block mx-auto" x-large icon>
+                <v-icon x-large>{{ mdiFileOutline }}</v-icon>
+              </v-btn>
+              <p class="text-center text-overline">{{ $t("home__resume") }}</p>
+            </a>
           </v-col>
         </v-row>
       </v-col>

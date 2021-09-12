@@ -23,7 +23,7 @@
               {{ techno }}
             </v-chip>
           </v-chip-group>
-          <p class="text--medium">
+          <p class="text--medium text-justify text-sm-left">
             Cette application permet d'enregistrer les trajets les plus
             fréquents que l'utilisateur effectue pour ensuite lui afficher les
             temps de passages des bus.

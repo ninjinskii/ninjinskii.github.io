@@ -20,3 +20,14 @@ h3 {
   letter-spacing: 1px;
   font-size: 1.3rem; /* do 1.2 on mobile */
 }
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  color: red;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
