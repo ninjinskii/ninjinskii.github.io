@@ -3,7 +3,10 @@
     <h2 class="my-16 d-block text-truncate">{{ $t("home__projects") }}</h2>
     <v-row>
       <v-col v-for="(project, index) in projects" :key="index" cols="12">
-        <project-item :project="project" />
+        <project-item
+          :project="project"
+          @show-project="$emit('show-project', project)"
+        />
         <v-divider v-if="index !== projects.length - 1" class="mt-8" />
       </v-col>
     </v-row>

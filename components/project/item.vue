@@ -34,7 +34,7 @@
             {{ mdiOpenInNew }}
           </v-icon>
         </v-btn>
-        <v-btn class="mt-4 ml-4" outlined>
+        <v-btn class="mt-4 ml-4" outlined @click="$emit('show-project')">
           {{ $t("show__demo") }}
         </v-btn>
       </v-col>
