@@ -14,7 +14,7 @@
           {{ project.name }}
         </h2>
         <div class="text-overline text--disabled text-center text-md-left">
-          Horaires en temps réel des bus de Besançon (25)
+          {{ project.subtitle }}
         </div>
         <v-chip-group column>
           <v-chip
@@ -26,11 +26,9 @@
           </v-chip>
         </v-chip-group>
         <p class="text--medium text-justify text-sm-left">
-          Cette application permet d'enregistrer les trajets les plus fréquents
-          que l'utilisateur effectue pour ensuite lui afficher les temps de
-          passages des bus.
+          {{ project.story }}
         </p>
-        <v-btn class="mt-4" outlined>
+        <v-btn class="mt-4" outlined :href="project.code" target="blank">
           {{ $t("show__code") }}
           <v-icon right>
             {{ mdiOpenInNew }}

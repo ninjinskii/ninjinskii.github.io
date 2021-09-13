@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-card>
     <v-row justify="center">
       <v-col cols="12" md="6">
         <v-img
@@ -17,5 +17,5 @@
         </ul>
       </v-col>
     </v-row>
-  </v-container>
+  </v-card>
 </template>
