@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <h2 class="my-16 d-block text-truncate">{{ $t("home__projects") }}</h2>
+    <h2 class="my-8 my-md-16 d-block text-truncate">
+      {{ $t("home__projects") }}
+    </h2>
     <v-row>
       <v-col v-for="(project, index) in projects" :key="index" cols="12">
         <project-item

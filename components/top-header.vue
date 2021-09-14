@@ -20,11 +20,7 @@
             </a>
           </v-col>
           <v-col cols="6">
-            <a
-              class="text--primary"
-              href="https://github.com/ninjinskii"
-              target="blank"
-            >
+            <a class="text--primary" href="/resume/resume.html">
               <v-btn class="d-block mx-auto" x-large icon>
                 <v-icon x-large>{{ mdiFileOutline }}</v-icon>
               </v-btn>
