@@ -1,12 +1,13 @@
 <template>
   <v-container fluid px-0>
     <v-row>
-      <v-col cols="12" md="3">
+      <v-col cols="12" md="3" lg="2">
         <v-img
           src="/images/aviatorjk_bark.jpg"
           class="rounded-circle mx-auto mx-md-0"
-          height="196px"
-          width="196px"
+          aspect-ratio="1"
+          max-width="196px"
+          width="100%"
         />
       </v-col>
       <v-col>
