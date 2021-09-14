@@ -1,5 +1,6 @@
 export default {
   home__projects: "Mes projets",
+  home__contact: "Contact",
   home__github: "Github",
   home__resume: "CV",
   home__intro: "Ma petite phrase",

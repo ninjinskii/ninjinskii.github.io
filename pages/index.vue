@@ -1,11 +1,17 @@
 <template>
   <div>
-    <v-dialog v-model="project" max-width="600px">
+    <v-dialog v-model="project" :fullscreen="goFullscreen" max-width="600px">
       <project-demo :project="project" @close="project = null" />
     </v-dialog>
-    <top-header />
+    <v-dialog
+      v-model="contactDialog"
+      :fullscreen="goFullscreen"
+      max-width="600px"
+    >
+      <contact-form @close="contactDialog = false" />
+    </v-dialog>
+    <top-header @open-contact="contactDialog = true" />
     <project-list @show-project="showProject($event)" />
-    <contact-form />
   </div>
 </template>
 
@@ -18,7 +24,13 @@ export default {
   data() {
     return {
       project: null,
+      contactDialog: false,
     };
+  },
+  computed: {
+    goFullscreen() {
+      return this.$vuetify.breakpoint.mobile;
+    },
   },
   methods: {
     showProject(project) {
