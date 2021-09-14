@@ -38,6 +38,7 @@
         <v-btn class="mt-4 ml-sm-4" outlined @click="$emit('show-project')">
           {{ $t("show__demo") }}
         </v-btn>
+        <v-divider v-if="!last" class="mt-16" />
       </v-col>
     </v-row>
   </v-container>
@@ -51,6 +52,10 @@ export default {
     project: {
       type: Object,
       default: () => ({}),
+    },
+    last: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
