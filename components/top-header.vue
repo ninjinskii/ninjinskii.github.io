@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="8">
         <h1>Bailly Louis</h1>
-        <p>Ma petite phrase</p>
+        <p>{{ $t("home__intro") }}</p>
       </v-col>
       <v-col cols="12" md="4">
         <v-row>

@@ -1,10 +1,10 @@
 <template>
   <v-container fluid px-0>
     <v-row>
-      <v-col cols="2">
+      <v-col cols="12" md="3">
         <v-img
           src="/images/aviatorjk_bark.jpg"
-          class="rounded-circle"
+          class="rounded-circle mx-auto mx-md-0"
           height="196px"
           width="196px"
         />
