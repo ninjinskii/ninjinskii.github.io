@@ -22,6 +22,8 @@
               v-model="email"
               :label="$t('form__email_address')"
               :rules="[rules.required, rules.email]"
+              type="email"
+              name="email"
               hide-details="auto"
               filled
             />
