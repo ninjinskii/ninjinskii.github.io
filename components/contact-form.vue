@@ -1,5 +1,49 @@
 <template>
-  <form
+  <v-form v-model="valid">
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-text-field
+            v-model="fullName"
+            :label="$t('form__full_name')"
+            :rules="[rules.required]"
+            filled
+          />
+        </v-col>
+        <v-col cols="12" md="6">
+          <v-text-field
+            v-model="email"
+            :label="$t('form__email_address')"
+            :rules="[rules.required, rules.email]"
+            filled
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-textarea
+            v-model="message"
+            rows="3"
+            :label="$t('form__message')"
+            :rules="[rules.required]"
+            filled
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-btn
+            class="float-right"
+            large
+            :disabled="!valid"
+            @click="onSubmit()"
+          >
+            {{ $t("form__submit") }}
+            <v-icon right>
+              {{ mdiSend }}
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
+  <!-- <form
     id="form"
     ref="form"
     name="contact-form"
@@ -35,29 +79,44 @@
       <input id="email-subject" type="hidden" name="_next" value="#" />
     </fieldset>
     <input type="submit" :value="$t('form__submit')" />
-  </form>
+  </form> -->
 </template>
 
 <script>
+import { mdiSend } from "@mdi/js";
+
 export default {
-  mounted() {
-    this.$refs.form.addEventListener("submit", this.onSubmit);
+  data() {
+    return {
+      mdiSend,
+      valid: false,
+      fullName: "",
+      email: "",
+      message: "",
+      rules: {
+        required: (v) => !!v || this.$t("form__required_field"),
+        email: (v) => /\S+@\S+\.\S+/.test(v) || this.$t("form__invalid_email"),
+      },
+    };
   },
   methods: {
-    async onSubmit(event) {
-      event.preventDefault();
-      const data = new FormData(event.target);
-
+    async onSubmit() {
       try {
-        await this.$axios.$post(event.target.action, {
-          body: data,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-        this.$nuxt.$emit("form-success");
+        const response = await this.$axios.$post(
+          "https://formspree.io/f/mzbyodbp",
+          {
+            fullName: this.fullName,
+            email: this.email,
+            message: this.message,
+          }
+        );
+
+        if (response.ok === true) {
+          this.$nuxt.$emit("form-success");
+        } else {
+          throw new Error();
+        }
       } catch (error) {
-        console.log(error);
         this.$nuxt.$emit("form-error");
       }
     },

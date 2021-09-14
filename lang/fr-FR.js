@@ -5,4 +5,12 @@ export default {
   home__intro: "Ma petite phrase",
   show__demo: "Voir la démo",
   show__code: "Voir le code",
+  form__success: "Le message à été envoyé.",
+  form__error: "Une erreur est survenue.",
+  form__full_name: "Nom prénom",
+  form__email_address: "Email",
+  form__message: "Message",
+  form__submit: "Envoyer",
+  form__required_field: "Champ requis",
+  form__invalid_email: "Email invalide",
 };
