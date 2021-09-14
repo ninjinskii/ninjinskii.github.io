@@ -3,7 +3,7 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-snackbar v-model="snack" color="white">
+    <v-snackbar v-model="snack" top color="white">
       <span style="color: rgba(0, 0, 0, 0.86)"> {{ snackText }} </span>
     </v-snackbar>
   </v-app>

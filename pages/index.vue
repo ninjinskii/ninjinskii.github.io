@@ -1,7 +1,16 @@
 <template>
   <div>
-    <v-dialog v-model="project" :fullscreen="goFullscreen" max-width="600px">
-      <project-demo :project="project" @close="project = null" />
+    <v-dialog
+      v-model="projectDialog.show"
+      :fullscreen="goFullscreen"
+      max-width="600px"
+      @input="controlVideo($event)"
+    >
+      <project-demo
+        ref="demo"
+        :project="projectDialog.project"
+        @close="projectDialog.project = null"
+      />
     </v-dialog>
     <v-dialog
       v-model="contactDialog"
@@ -23,7 +32,10 @@ export default {
   },
   data() {
     return {
-      project: null,
+      projectDialog: {
+        show: false,
+        project: null,
+      },
       contactDialog: false,
     };
   },
@@ -34,7 +46,17 @@ export default {
   },
   methods: {
     showProject(project) {
-      this.project = project;
+      this.projectDialog.project = project;
+      this.projectDialog.show = true;
+    },
+    controlVideo(event) {
+      if (this.$refs.demo) {
+        if (event) {
+          this.$refs.demo.playVideo();
+        } else {
+          this.$refs.demo.pauseVideo();
+        }
+      }
     },
   },
 };

@@ -41,6 +41,7 @@
           <v-col cols="12">
             <v-btn
               class="float-right"
+              outlined
               large
               :disabled="!valid"
               @click="onSubmit()"
@@ -50,9 +51,21 @@
                 {{ mdiSend }}
               </v-icon>
             </v-btn>
-            <v-btn class="float-right mr-4" large outlined @click="closeSelf()">
+            <v-btn class="float-right mr-4" large text @click="closeSelf()">
               {{ $t("close") }}
             </v-btn>
+          </v-col>
+        </v-row>
+        <v-row class="mt-8">
+          <v-col cols="4" sm="5">
+            <v-divider />
+          </v-col>
+          <v-col cols="4" sm="2" class="text-center"><h2>OU</h2></v-col>
+          <v-col cols="4" sm="5">
+            <v-divider />
+          </v-col>
+          <v-col>
+            <p>Envoyez-moi un mail à louis.bailly.pro@gmail.com</p>
           </v-col>
         </v-row>
       </v-card-text>
