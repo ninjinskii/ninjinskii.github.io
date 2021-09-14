@@ -5,6 +5,7 @@
     </v-dialog>
     <top-header />
     <project-list @show-project="showProject($event)" />
+    <contact-form />
   </div>
 </template>
 

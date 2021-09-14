@@ -33,7 +33,7 @@ module.exports = {
     { src: "@/assets/css/transitions.css" },
   ],
   // plugins
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/axios"],
   buildModules: ["@nuxtjs/vuetify"],
   build: {
     extend(config, ctx) {
