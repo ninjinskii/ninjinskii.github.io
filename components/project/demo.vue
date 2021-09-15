@@ -27,7 +27,11 @@
     <v-card-text>
       <v-row justify="center">
         <v-col cols="12" md="6">
-          <div v-ripple="{ class: 'primary--text' }" style="width: 260px">
+          <div
+            v-ripple="{ class: 'primary--text' }"
+            class="mx-auto"
+            style="width: 260px"
+          >
             <video
               ref="video"
               :src="project.demo.video"
@@ -42,22 +46,21 @@
               @timeupdate="updateTime()"
               @click="toggleVideo()"
             />
+            <v-slider
+              color="primary"
+              min="0"
+              max="100"
+              :value="timebar"
+              :prepend-icon="isPlaying ? mdiPause : mdiPlay"
+              :hint="currentPlayerTime"
+              persistent-hint
+              @start="isDragging = true"
+              @end="isDragging = false"
+              @input="drag = $event"
+              @change="goTo($refs.video.duration * ($event / 100))"
+              @click:prepend="toggleVideo()"
+            />
           </div>
-          <v-slider
-            style="width: 260px"
-            color="primary"
-            min="0"
-            max="100"
-            :value="timebar"
-            :prepend-icon="isPlaying ? mdiPause : mdiPlay"
-            :hint="currentPlayerTime"
-            persistent-hint
-            @start="isDragging = true"
-            @end="isDragging = false"
-            @input="drag = $event"
-            @change="goTo($refs.video.duration * ($event / 100))"
-            @click:prepend="toggleVideo()"
-          />
         </v-col>
         <v-col cols="12" md="6">
           <v-list rounded dense outlined>
