@@ -1,7 +1,7 @@
 <template>
   <v-card v-if="project">
     <v-card-title>
-      <h2 class="mb-n3 text-center text-md-left" style="width: 100%">
+      <h2 class="mb-n1 text-center text-md-left" style="width: 100%">
         {{ project.name }}
       </h2>
       <div class="text-overline text--disabled text-center text-md-left">
@@ -11,34 +11,40 @@
     <v-card-text>
       <v-row justify="center">
         <v-col cols="12" md="6">
-          <video
-            ref="video"
-            :src="project.demo.video"
-            type="video/mp4"
-            height="540"
-            width="260"
-            autoplay
-            muted
-            controls
-            class="mx-auto ml-md-auto mr-md-0"
-            @play="isPlaying = true"
-            @pause="isPlaying = false"
-            @timeupdate="updateTime()"
-          />
+          <div v-ripple="{ class: 'primary--text' }" style="width: 260px">
+            <video
+              ref="video"
+              :src="project.demo.video"
+              type="video/mp4"
+              height="540"
+              width="260"
+              autoplay
+              muted
+              class="mx-auto ml-md-auto mr-md-0"
+              @play="isPlaying = true"
+              @pause="isPlaying = false"
+              @timeupdate="updateTime()"
+              @click="toggleVideo()"
+            />
+          </div>
           <v-slider
-            :value="timebar"
-            style="width: 260px"
+            style="width: 260px; cursor: pointer"
             color="primary"
             min="0"
             max="100"
+            :value="timebar"
             :prepend-icon="isPlaying ? mdiPause : mdiPlay"
             :hint="currentPlayerTime"
             persistent-hint
+            @start="isDragging = true"
+            @end="isDragging = false"
+            @input="drag = $event"
+            @change="goTo($refs.video.duration * ($event / 100))"
             @click:prepend="toggleVideo()"
           />
         </v-col>
         <v-col cols="12" md="6">
-          <v-list rounded dense>
+          <v-list rounded dense outlined>
             <v-list-item-group :value="currentTimestamp" mandatory>
               <v-list-item
                 v-for="timestamp in project.demo.timestamps"
@@ -52,15 +58,18 @@
                   </span>
                 </v-list-item-action>
                 <v-list-item-content>
-                  {{ timestamp.desc }}
+                  {{ $t(timestamp.desc) }}
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
           </v-list>
         </v-col>
       </v-row>
-      <v-btn @click="closeSelf()">{{ $t("close") }}</v-btn>
     </v-card-text>
+    <v-card-actions>
+      <v-spacer />
+      <v-btn outlined @click="closeSelf()">{{ $t("close") }}</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -83,6 +92,8 @@ export default {
       mdiPlay,
       mdiPause,
       isPlaying: false,
+      isDragging: false,
+      drag: 0,
       currentTime: 0,
       timebar: 0,
       muted: true,
@@ -101,7 +112,15 @@ export default {
       }
     },
     currentPlayerTime() {
-      return this.formatSeconds(~~this.currentTime);
+      const timeToUse = this.isDragging
+        ? this.computeRatio(this.drag)
+        : this.currentTime;
+
+      const current = this.formatSeconds(~~timeToUse);
+      const total = this.formatSeconds(
+        this.$refs.video ? ~~this.$refs.video.duration : 0
+      );
+      return `${current} / ${total}`;
     },
   },
   watch: {
@@ -111,11 +130,6 @@ export default {
       } else {
         this.pauseVideo();
       }
-    },
-    timebar(val) {
-      const duration = ~~this.$refs.video.duration;
-      const time = duration * (val / 100);
-      this.goTo(time);
     },
   },
   mounted() {
@@ -142,7 +156,7 @@ export default {
       this.isPlaying ? this.pauseVideo() : this.playVideo();
     },
     updateTime() {
-      if (this.$refs.video) {
+      if (this.$refs.video && !this.isDragging) {
         const duration = ~~this.$refs.video.duration;
         this.timebar = ~~((100 / duration) * this.currentTime);
         this.currentTime = this.$refs.video.currentTime;
@@ -151,9 +165,18 @@ export default {
     goTo(time) {
       if (this.$refs.video) {
         this.$refs.video.currentTime = time;
+        this.updateTime();
       }
 
       this.playVideo();
+    },
+    computeRatio(sliderValue) {
+      if (this.$refs.video) {
+        const duration = ~~this.$refs.video.duration;
+        return ~~(duration * (sliderValue / 100));
+      } else {
+        return 0;
+      }
     },
     formatSeconds(s) {
       return (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s;
