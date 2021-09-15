@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="3" lg="2">
         <v-img
-          src="/images/aviatorjk_bark.jpg"
+          :src="project.thumbnail"
           class="rounded-circle mx-auto mx-md-0"
           aspect-ratio="1"
           max-width="196px"
