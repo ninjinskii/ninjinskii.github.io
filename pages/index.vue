@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import projects from "~/assets/data/projects.js";
+
 export default {
   transition: {
     name: "shared-reverse",
@@ -44,6 +46,18 @@ export default {
     goFullscreen() {
       return this.$vuetify.breakpoint.mobile;
     },
+  },
+  created() {
+    const query = this.$route.query.project;
+    if (query) {
+      const project = projects.find(
+        (project) => project.shortname.toLowerCase() === query
+      );
+
+      if (project) {
+        this.showProject(project);
+      }
+    }
   },
   methods: {
     showProject(project) {

@@ -2,6 +2,7 @@
 export default [
   {
     id: 1,
+    shortname: "grtw",
     name: "Ginko Real Time Widget",
     subtitle: "Horaires en temps réel des bus de Besançon (25)",
     thumbnail: "/images/logo-grtw.png",
@@ -31,6 +32,7 @@ export default [
   },
   {
     id: 2,
+    shortname: "cavity",
     name: "Cavity",
     subtitle: "Gestionnaire de cave à vin",
     thumbnail: "/images/logo-cavity.png",

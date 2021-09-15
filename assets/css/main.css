@@ -5,6 +5,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 2.75rem;
+  font-weight: 500;
 }
 
 h2 {
@@ -12,6 +13,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 1.8rem;
+  font-weight: 500;
   word-break: normal;
 }
 
