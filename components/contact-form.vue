@@ -115,6 +115,8 @@ export default {
 
         if (response.ok === true) {
           this.$nuxt.$emit("form-success");
+          this.$refs.form.reset();
+          this.closeSelf();
         } else {
           throw new Error();
         }

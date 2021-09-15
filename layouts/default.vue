@@ -3,8 +3,8 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-snackbar v-model="snack" top color="white">
-      <span style="color: rgba(0, 0, 0, 0.86)"> {{ snackText }} </span>
+    <v-snackbar v-model="snack" top :color="color">
+      <span> {{ snackText }} </span>
     </v-snackbar>
   </v-app>
 </template>
@@ -15,15 +15,18 @@ export default {
     return {
       snack: false,
       snackText: "",
+      color: "success",
     };
   },
   mounted() {
     this.$nuxt.$on("form-success", () => {
       this.snackText = this.$t("form__success");
+      this.color = "success";
       this.snack = true;
     });
     this.$nuxt.$on("form-error", () => {
       this.snackText = this.$t("form__error");
+      this.color = "error";
       this.snack = true;
     });
   },
