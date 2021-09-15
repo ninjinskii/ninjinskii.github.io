@@ -38,7 +38,7 @@ export default [
     thumbnail: "/images/logo-cavity.png",
     technos: ["Android", "Java", "SQLite", "XML"],
     bullets: ["Bullet point number 1", "Bullet point number 3"],
-    story: "",
+    story: "Trouvez toujours la bonne bouteille à ouvrir pour vos occasions.",
     code: "https://github.com/ninjinskii/JavaCavity",
     demo: {
       video:
