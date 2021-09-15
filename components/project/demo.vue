@@ -28,7 +28,7 @@
             />
           </div>
           <v-slider
-            style="width: 260px; cursor: pointer"
+            style="width: 260px"
             color="primary"
             min="0"
             max="100"
