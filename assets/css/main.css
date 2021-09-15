@@ -12,6 +12,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 1.8rem;
+  word-break: normal;
 }
 
 h3 {

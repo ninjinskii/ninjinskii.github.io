@@ -1,12 +1,28 @@
 <template>
   <v-card v-if="project">
     <v-card-title>
-      <h2 class="mb-n1 text-center text-md-left" style="width: 100%">
-        {{ project.name }}
-      </h2>
-      <div class="text-overline text--disabled text-center text-md-left">
-        {{ project.subtitle }}
+      <div>
+        <h2
+          v-if="!$vuetify.breakpoint.mobile"
+          class="mb-n1"
+          style="max-width: 80%"
+        >
+          {{ project.name }}
+        </h2>
+        <div v-else>
+          {{ project.name }}
+        </div>
+        <div
+          v-if="!$vuetify.breakpoint.mobile"
+          class="text-overline text--disabled"
+        >
+          {{ project.subtitle }}
+        </div>
       </div>
+      <v-spacer />
+      <v-btn v-if="$vuetify.breakpoint.mobile" icon large @click="closeSelf()">
+        <v-icon large>{{ mdiClose }} </v-icon>
+      </v-btn>
     </v-card-title>
     <v-card-text>
       <v-row justify="center">
@@ -66,15 +82,11 @@
         </v-col>
       </v-row>
     </v-card-text>
-    <v-card-actions>
-      <v-spacer />
-      <v-btn outlined @click="closeSelf()">{{ $t("close") }}</v-btn>
-    </v-card-actions>
   </v-card>
 </template>
 
 <script>
-import { mdiPlay, mdiPause } from "@mdi/js";
+import { mdiPlay, mdiPause, mdiClose } from "@mdi/js";
 
 export default {
   props: {
@@ -91,6 +103,7 @@ export default {
     return {
       mdiPlay,
       mdiPause,
+      mdiClose,
       isPlaying: false,
       isDragging: false,
       drag: 0,
