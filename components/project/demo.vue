@@ -1,12 +1,8 @@
 <template>
   <v-card v-if="project">
     <v-card-title>
-      <div>
-        <h2
-          v-if="!$vuetify.breakpoint.mobile"
-          class="mb-n1"
-          style="max-width: 80%"
-        >
+      <div style="max-width: 90%">
+        <h2 v-if="!$vuetify.breakpoint.mobile" class="mb-n1">
           {{ project.name }}
         </h2>
         <div v-else>
@@ -25,7 +21,7 @@
       </v-btn>
     </v-card-title>
     <v-card-text>
-      <v-row justify="center">
+      <v-row justify="center" class="mt-1 mt-sm-4">
         <v-col cols="12" md="6">
           <div
             v-ripple="{ class: 'primary--text' }"
@@ -200,3 +196,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-input {
+  margin-top: -8px;
+  padding: 4px 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+</style>
