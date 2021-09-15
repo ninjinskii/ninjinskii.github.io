@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  node:
+    container_name: portfolio.local.io
+    build:
+      context: ./
+      target: development
+    image: local/portfolio:latest
+    volumes:
+      - .:/app
+    networks:
+      - default
