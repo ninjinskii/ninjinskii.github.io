@@ -3,13 +3,14 @@
     <v-dialog
       v-model="projectDialog.show"
       :fullscreen="goFullscreen"
-      max-width="600px"
+      max-width="800px"
       @input="controlVideo($event)"
     >
       <project-demo
         ref="demo"
         :project="projectDialog.project"
-        @close="projectDialog.project = null"
+        :show="projectDialog.show"
+        @close="closeProject()"
       />
     </v-dialog>
     <v-dialog
@@ -48,6 +49,9 @@ export default {
     showProject(project) {
       this.projectDialog.project = project;
       this.projectDialog.show = true;
+    },
+    closeProject() {
+      this.projectDialog.show = false;
     },
     controlVideo(event) {
       if (this.$refs.demo) {
