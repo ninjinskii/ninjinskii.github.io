@@ -23,25 +23,23 @@
     <v-card-text>
       <v-row justify="center" class="mt-1 mt-sm-4">
         <v-col cols="12" md="6">
-          <div
-            v-ripple="{ class: 'primary--text' }"
-            class="mx-auto"
-            style="width: 260px"
-          >
-            <video
-              ref="video"
-              :src="project.demo.video"
-              type="video/mp4"
-              height="540"
-              width="260"
-              autoplay
-              muted
-              class="mx-auto ml-md-auto mr-md-0"
-              @play="isPlaying = true"
-              @pause="isPlaying = false"
-              @timeupdate="updateTime()"
-              @click="toggleVideo()"
-            />
+          <div class="mx-auto" style="width: 260px">
+            <div v-ripple="{ class: 'primary--text' }">
+              <video
+                ref="video"
+                :src="project.demo.video"
+                type="video/mp4"
+                height="540"
+                width="260"
+                autoplay
+                muted
+                class="mx-auto ml-md-auto mr-md-0"
+                @play="isPlaying = true"
+                @pause="isPlaying = false"
+                @timeupdate="updateTime()"
+                @click="toggleVideo()"
+              />
+            </div>
             <v-slider
               color="primary"
               min="0"
