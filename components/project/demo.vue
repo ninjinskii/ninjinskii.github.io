@@ -1,47 +1,60 @@
 <template>
   <v-card v-if="project">
     <v-card-title>
-      <h2 class="mb-n1 text-center text-md-left" style="width: 100%">
-        {{ project.name }}
-      </h2>
-      <div class="text-overline text--disabled text-center text-md-left">
-        {{ project.subtitle }}
+      <div style="max-width: 90%">
+        <h2 v-if="!$vuetify.breakpoint.mobile" class="mb-n1">
+          {{ project.name }}
+        </h2>
+        <div v-else>
+          {{ project.name }}
+        </div>
+        <div
+          v-if="!$vuetify.breakpoint.mobile"
+          class="text-overline text--disabled"
+        >
+          {{ project.subtitle }}
+        </div>
       </div>
+      <v-spacer />
+      <v-btn v-if="$vuetify.breakpoint.mobile" icon large @click="closeSelf()">
+        <v-icon large>{{ mdiClose }} </v-icon>
+      </v-btn>
     </v-card-title>
     <v-card-text>
-      <v-row justify="center">
+      <v-row justify="center" class="mt-1 mt-sm-4">
         <v-col cols="12" md="6">
-          <div v-ripple="{ class: 'primary--text' }" style="width: 260px">
-            <video
-              ref="video"
-              :src="project.demo.video"
-              type="video/mp4"
-              height="540"
-              width="260"
-              autoplay
-              muted
-              class="mx-auto ml-md-auto mr-md-0"
-              @play="isPlaying = true"
-              @pause="isPlaying = false"
-              @timeupdate="updateTime()"
-              @click="toggleVideo()"
+          <div class="mx-auto" style="width: 260px">
+            <div v-ripple="{ class: 'primary--text' }">
+              <video
+                ref="video"
+                :src="project.demo.video"
+                type="video/mp4"
+                height="540"
+                width="260"
+                autoplay
+                muted
+                class="mx-auto ml-md-auto mr-md-0"
+                @play="isPlaying = true"
+                @pause="isPlaying = false"
+                @timeupdate="updateTime()"
+                @click="toggleVideo()"
+              />
+            </div>
+            <v-slider
+              color="primary"
+              min="0"
+              max="100"
+              :value="timebar"
+              :prepend-icon="isPlaying ? mdiPause : mdiPlay"
+              :hint="currentPlayerTime"
+              persistent-hint
+              @start="isDragging = true"
+              @end="isDragging = false"
+              @input="drag = $event"
+              @change="goTo($refs.video.duration * ($event / 100))"
+              @click:prepend="toggleVideo()"
             />
           </div>
-          <v-slider
-            style="width: 260px; cursor: pointer"
-            color="primary"
-            min="0"
-            max="100"
-            :value="timebar"
-            :prepend-icon="isPlaying ? mdiPause : mdiPlay"
-            :hint="currentPlayerTime"
-            persistent-hint
-            @start="isDragging = true"
-            @end="isDragging = false"
-            @input="drag = $event"
-            @change="goTo($refs.video.duration * ($event / 100))"
-            @click:prepend="toggleVideo()"
-          />
         </v-col>
         <v-col cols="12" md="6">
           <v-list rounded dense outlined>
@@ -66,15 +79,11 @@
         </v-col>
       </v-row>
     </v-card-text>
-    <v-card-actions>
-      <v-spacer />
-      <v-btn outlined @click="closeSelf()">{{ $t("close") }}</v-btn>
-    </v-card-actions>
   </v-card>
 </template>
 
 <script>
-import { mdiPlay, mdiPause } from "@mdi/js";
+import { mdiPlay, mdiPause, mdiClose } from "@mdi/js";
 
 export default {
   props: {
@@ -91,6 +100,7 @@ export default {
     return {
       mdiPlay,
       mdiPause,
+      mdiClose,
       isPlaying: false,
       isDragging: false,
       drag: 0,
@@ -184,3 +194,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-input {
+  margin-top: -8px;
+  padding: 4px 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+</style>

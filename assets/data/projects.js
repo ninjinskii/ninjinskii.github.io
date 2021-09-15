@@ -2,8 +2,10 @@
 export default [
   {
     id: 1,
+    shortname: "grtw",
     name: "Ginko Real Time Widget",
     subtitle: "Horaires en temps réel des bus de Besançon (25)",
+    thumbnail: "/images/logo-grtw.png",
     technos: ["Android", "Kotlin", "SQLite", "XML"],
     bullets: [
       "Bullet point number 1",
@@ -30,11 +32,13 @@ export default [
   },
   {
     id: 2,
+    shortname: "cavity",
     name: "Cavity",
     subtitle: "Gestionnaire de cave à vin",
+    thumbnail: "/images/logo-cavity.png",
     technos: ["Android", "Java", "SQLite", "XML"],
     bullets: ["Bullet point number 1", "Bullet point number 3"],
-    story: "",
+    story: "Trouvez toujours la bonne bouteille à ouvrir pour vos occasions.",
     code: "https://github.com/ninjinskii/JavaCavity",
     demo: {
       video:

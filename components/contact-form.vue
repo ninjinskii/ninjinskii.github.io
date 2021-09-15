@@ -2,9 +2,18 @@
   <v-card>
     <v-form ref="form" v-model="valid">
       <v-card-title>
-        <h2 class="d-block text-truncate">
+        <h2>
           {{ $t("home__contact") }}
         </h2>
+        <v-spacer />
+        <v-btn
+          v-if="$vuetify.breakpoint.mobile"
+          icon
+          large
+          @click="closeSelf()"
+        >
+          <v-icon large>{{ mdiClose }} </v-icon>
+        </v-btn>
       </v-card-title>
       <v-card-text>
         <v-row>
@@ -51,9 +60,6 @@
                 {{ mdiSend }}
               </v-icon>
             </v-btn>
-            <v-btn class="float-right mr-4" large text @click="closeSelf()">
-              {{ $t("close") }}
-            </v-btn>
           </v-col>
         </v-row>
         <v-row class="mt-8">
@@ -74,12 +80,13 @@
 </template>
 
 <script>
-import { mdiSend } from "@mdi/js";
+import { mdiSend, mdiClose } from "@mdi/js";
 
 export default {
   data() {
     return {
       mdiSend,
+      mdiClose,
       valid: false,
       fullName: "",
       email: "",
@@ -108,6 +115,8 @@ export default {
 
         if (response.ok === true) {
           this.$nuxt.$emit("form-success");
+          this.$refs.form.reset();
+          this.closeSelf();
         } else {
           throw new Error();
         }
