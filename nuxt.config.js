@@ -2,9 +2,7 @@ import { version } from "./package.json";
 
 module.exports = {
   target: "static",
-  router: {
-    base: "/ninjinskii.github.io/",
-  },
+  ssr: false,
   components: true,
   dev: process.env.NODE_ENV !== "production",
   publicRuntimeConfig: {
