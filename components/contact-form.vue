@@ -71,7 +71,12 @@
             <v-divider />
           </v-col>
           <v-col>
-            <p>Envoyez-moi un mail à louis.bailly.pro@gmail.com</p>
+            <p>
+              Envoyez-moi un mail à
+              <a href="mailto:louis.bailly.pro@gmail.com"
+                >louis.bailly.pro@gmail.com</a
+              >
+            </p>
           </v-col>
         </v-row>
       </v-card-text>

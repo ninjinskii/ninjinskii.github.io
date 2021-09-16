@@ -12,7 +12,7 @@
           v-if="!$vuetify.breakpoint.mobile"
           class="text-overline text--disabled"
         >
-          {{ project.subtitle }}
+          {{ $t(project.subtitle) }}
         </div>
       </div>
       <v-spacer />

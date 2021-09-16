@@ -5,7 +5,7 @@ export default {
   home__contact: "Contact",
   home__github: "Github",
   home__resume: "CV",
-  home__intro: "Développeur full stack passionné qui aime rester à jour avec les technologies.",
+  home__title: "Développeur",
   show__demo: "Voir la démo",
   show__code: "Voir le code",
   form__success: "Le message a été envoyé.",
