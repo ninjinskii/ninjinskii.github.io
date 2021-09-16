@@ -2,7 +2,6 @@ import { version } from "./package.json";
 
 module.exports = {
   target: "static",
-  ssr: false,
   router: {
     base: "/ninjinskii.github.io/",
   },
