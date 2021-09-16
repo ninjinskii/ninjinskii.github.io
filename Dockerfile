@@ -9,9 +9,11 @@ RUN set -ex \
     && apt-get install -y --no-install-recommends \
     python3 \
     make \
+    git\
+    openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "run", "dev"]

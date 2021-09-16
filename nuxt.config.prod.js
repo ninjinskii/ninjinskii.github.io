@@ -4,7 +4,7 @@ import { version } from "./package.json";
 // import fs from "fs";
 
 module.exports = {
-  mode: "static",
+  target: "static",
   router: {
     base: "/portfolio/",
   },
