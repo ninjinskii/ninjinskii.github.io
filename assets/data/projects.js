@@ -4,16 +4,15 @@ export default [
     id: 1,
     shortname: "grtw",
     name: "Ginko Real Time Widget",
-    subtitle: "Horaires en temps réel des bus de Besançon (25)",
+    subtitle: "grtw__subtitle",
     thumbnail: "/images/logo-grtw.png",
     technos: ["Android", "Kotlin", "SQLite", "XML"],
+    story: "grtw__story",
     bullets: [
-      "Bullet point number 1",
-      "Bullet point number 2",
-      "Bullet point number 3",
+      "Utilisation d'une base de données pour stocker les trajets",
+      "Communication avec une API pour afficher les temps de passages",
+      "Création d'un widget pour afficher ses temps directement sur l'écran d'acceuil",
     ],
-    story:
-      "Cette application permet d'enregistrer les trajets les plus fréquents que l'utilisateur effectue pour ensuite lui afficher les temps de passages des bus.",
     code: "https://github.com/ninjinskii/GinkoRealTimeWidget",
     demo: {
       video:
@@ -34,11 +33,11 @@ export default [
     id: 2,
     shortname: "cavity",
     name: "Cavity",
-    subtitle: "Gestionnaire de cave à vin",
+    subtitle: "cavity__subtitle",
     thumbnail: "/images/logo-cavity.png",
     technos: ["Android", "Java", "SQLite", "XML"],
     bullets: ["Bullet point number 1", "Bullet point number 3"],
-    story: "Trouvez toujours la bonne bouteille à ouvrir pour vos occasions.",
+    story: "cavity__story",
     code: "https://github.com/ninjinskii/JavaCavity",
     demo: {
       video:

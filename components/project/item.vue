@@ -15,7 +15,7 @@
           {{ project.name }}
         </h2>
         <div class="text-overline text--disabled text-center text-md-left">
-          {{ project.subtitle }}
+          {{ $t(project.subtitle) }}
         </div>
         <v-chip-group column>
           <v-chip
@@ -27,7 +27,7 @@
           </v-chip>
         </v-chip-group>
         <p class="text--medium text-justify text-sm-left">
-          {{ project.story }}
+          {{ $t(project.story) }}
         </p>
         <v-btn class="mt-4" outlined :href="project.code" target="blank">
           {{ $t("show__code") }}

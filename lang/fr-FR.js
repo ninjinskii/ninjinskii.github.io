@@ -1,11 +1,11 @@
+// prettier-ignore
 export default {
   close: "Fermer",
   home__projects: "Mes projets",
   home__contact: "Contact",
   home__github: "Github",
   home__resume: "CV",
-  home__intro:
-    "Développeur full stack passionné qui aime rester à jour avec les technologies.",
+  home__intro: "Développeur full stack passionné qui aime rester à jour avec les technologies.",
   show__demo: "Voir la démo",
   show__code: "Voir le code",
   form__success: "Le message a été envoyé.",
@@ -32,4 +32,8 @@ export default {
   demo__display_bottle: "Afficher une bouteille",
   demo__consume_bottle: "Consommer une bouteille",
   demo__delete_bottle: "Supprimer une bouteille",
+  grtw__story: "Cette application permet d'enregistrer les trajets les plus fréquents que l'utilisateur effectue pour ensuite lui afficher les temps de passages des bus direcetement sur son écran d'acceuil.",
+  grtw__subtitle: "Horaires en temps réel des bus de Besançon (25)",
+  cavity__story: "Une application qui permet la gestion de son stock de vins, afin de toujours trouver la bonne bouteille pour chaque occasion.",
+  cavity__subtitle: "Gestionnaire de cave à vin",
 };
