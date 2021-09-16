@@ -3,7 +3,7 @@
     <v-dialog
       v-model="projectDialog.show"
       :fullscreen="goFullscreen"
-      max-width="800px"
+      max-width="850px"
       @input="controlVideo($event)"
     >
       <project-demo
