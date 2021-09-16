@@ -2,6 +2,7 @@ import { version } from "./package.json";
 
 module.exports = {
   target: "static",
+  ssr: false,
   router: {
     base: "/ninjinskii.github.io/",
   },
@@ -27,9 +28,7 @@ module.exports = {
     link: [{ rel: "favicon", type: "image/x-icon", href: "favicon.ico" }],
   },
   loading: { color: "#ffffff" },
-  css: [
-    { src: "@/assets/css/main.css" },
-  ],
+  css: [{ src: "@/assets/css/main.css" }],
   // plugins
   modules: ["@nuxtjs/i18n", "@nuxtjs/axios"],
   buildModules: ["@nuxtjs/vuetify"],
