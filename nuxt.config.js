@@ -4,6 +4,10 @@ import { version } from "./package.json";
 // import fs from "fs";
 
 module.exports = {
+  target: "static",
+  router: {
+    base: "/portfolio/",
+  },
   ssr: false,
   components: true,
   dev: process.env.NODE_ENV !== "production",
