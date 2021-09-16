@@ -6,7 +6,7 @@ import { version } from "./package.json";
 module.exports = {
   target: "static",
   router: {
-    base: "/portfolio/",
+    base: "/ninjinskii.github.io/",
   },
   ssr: false,
   components: true,
