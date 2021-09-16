@@ -1,19 +1,14 @@
 import { version } from "./package.json";
-// See below
-// import path from "path";
-// import fs from "fs";
 
 module.exports = {
   target: "static",
   router: {
     base: "/ninjinskii.github.io/",
   },
-  ssr: false,
   components: true,
   dev: process.env.NODE_ENV !== "production",
   publicRuntimeConfig: {
     VERSION: version,
-    WORKSPACE: process.env.WORKSPACE,
   },
   head: {
     title: "Bailly Louis | Portfolio",
@@ -34,7 +29,6 @@ module.exports = {
   loading: { color: "#ffffff" },
   css: [
     { src: "@/assets/css/main.css" },
-    { src: "@/assets/css/transitions.css" },
   ],
   // plugins
   modules: ["@nuxtjs/i18n", "@nuxtjs/axios"],
@@ -74,11 +68,4 @@ module.exports = {
       dark: true,
     },
   },
-  // Serve without traefik in https
-  // server: {
-  //   https: {
-  //     key: fs.readFileSync(path.resolve(__dirname, "server.key")),
-  //     cert: fs.readFileSync(path.resolve(__dirname, "server.crt")),
-  //   },
-  // },
 };

@@ -48,7 +48,7 @@
   </div>
 </template>
 <script>
-import projects from "~/assets/data/projects.js";
+import projects from "~/data/projects.js";
 import { mdiArrowLeft, mdiOpenInNew } from "@mdi/js";
 
 export default {

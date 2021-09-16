@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import projects from "~/assets/data/projects.js";
+import projects from "~/data/projects.js";
 
 export default {
   data() {
