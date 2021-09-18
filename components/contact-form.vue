@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-form ref="form" v-model="valid">
+    <v-form ref="form" v-model="valid" lazy-validation>
       <v-card-title>
         <h2>
           {{ $t("home__contact") }}
@@ -40,9 +40,10 @@
           <v-col cols="12">
             <v-textarea
               v-model="message"
-              rows="3"
+              rows="6"
+              :counter="messageMaxSize"
               :label="$t('form__message')"
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.max]"
               hide-details="auto"
               filled
             />
@@ -92,15 +93,26 @@ export default {
     return {
       mdiSend,
       mdiClose,
-      valid: false,
+      valid: true,
       fullName: "",
+      fullNameMaxSize: 100,
       email: "",
+      emailMaxSize: 254,
       message: "",
+      messageMaxSize: 1000,
       rules: {
         required: (v) => !!v || this.$t("form__required_field"),
         email: (v) => /\S+@\S+\.\S+/.test(v) || this.$t("form__invalid_email"),
+        max: (v) =>
+          v.length <= this.messageMaxSize || this.$t("form__too_long"),
       },
     };
+  },
+  watch: {
+    fullName(val) {
+      console.log("fullname");
+      console.log(val.substring(0, 100));
+    },
   },
   methods: {
     closeSelf() {
@@ -112,9 +124,9 @@ export default {
         const response = await this.$axios.$post(
           "https://formspree.io/f/mzbyodbp",
           {
-            fullName: this.fullName,
-            email: this.email,
-            message: this.message,
+            fullName: this.fullName.substring(0, this.fullNameMaxSize),
+            email: this.email.substring(0, this.emailMaxSize),
+            message: this.message.substring(0, this.messageMaxSize),
           }
         );
 
