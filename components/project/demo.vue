@@ -36,14 +36,18 @@
                 class="mx-auto ml-md-auto mr-md-0"
                 @play="isPlaying = true"
                 @pause="isPlaying = false"
+                @loadeddata="enableTimeControl = true"
                 @timeupdate="updateTime()"
                 @click="toggleVideo()"
-              />
+              >
+                {{ $t("demo__no_video") }}
+              </video>
             </div>
             <v-slider
               color="primary"
               min="0"
               max="100"
+              :disabled="!enableTimeControl"
               :value="timebar"
               :prepend-icon="isPlaying ? mdiPause : mdiPlay"
               :hint="currentPlayerTime"
@@ -103,6 +107,7 @@ export default {
       mdiClose,
       isPlaying: false,
       isDragging: false,
+      enableTimeControl: false,
       drag: 0,
       currentTime: 0,
       timebar: 0,
