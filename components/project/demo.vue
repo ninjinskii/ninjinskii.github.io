@@ -24,7 +24,7 @@
       <v-row justify="center" class="mt-1 mt-sm-4">
         <v-col cols="12" md="6">
           <div class="mx-auto" style="width: 260px">
-            <div v-ripple="{ class: 'primary--text' }">
+            <div style="position: relative">
               <video
                 ref="video"
                 :src="project.demo.video"
@@ -42,6 +42,18 @@
               >
                 {{ $t("demo__no_video") }}
               </video>
+              <v-slide-y-transition>
+                <v-overlay
+                  v-if="!isPlaying"
+                  opacity="0"
+                  absolute
+                  @click.native="playVideo()"
+                >
+                  <v-btn class="video-play mx-auto my-auto" icon x-large>
+                    <v-icon x-large>{{ mdiPlay }}</v-icon>
+                  </v-btn>
+                </v-overlay>
+              </v-slide-y-transition>
             </div>
             <v-slider
               color="primary"
@@ -205,5 +217,10 @@ export default {
   margin-top: -8px;
   padding: 4px 4px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-play {
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: default;
 }
 </style>
