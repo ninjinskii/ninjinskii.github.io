@@ -24,7 +24,10 @@
       <v-row justify="center" class="mt-1 mt-sm-4">
         <v-col cols="12" md="6">
           <div class="mx-auto" style="width: 260px">
-            <div style="position: relative">
+            <div
+              v-ripple="{ class: 'primary--text' }"
+              style="position: relative"
+            >
               <video
                 ref="video"
                 :src="project.demo.video"
