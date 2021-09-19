@@ -67,13 +67,15 @@
           <v-col cols="4" sm="5">
             <v-divider />
           </v-col>
-          <v-col cols="4" sm="2" class="text-center"><h2>OU</h2></v-col>
+          <v-col cols="4" sm="2" class="text-center">
+            <h2>{{ $t("form__or") }}</h2>
+          </v-col>
           <v-col cols="4" sm="5">
             <v-divider />
           </v-col>
           <v-col>
             <p>
-              Envoyez-moi un mail à
+              {{ $t("form__email_me") }}
               <a href="mailto:louis.bailly.pro@gmail.com"
                 >louis.bailly.pro@gmail.com</a
               >

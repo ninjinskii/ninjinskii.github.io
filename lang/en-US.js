@@ -17,6 +17,8 @@ export default {
   form__required_field: "Required field",
   form__invalid_email: "Invalid email",
   form__too_long: "Le message est trop long",
+  form__or: "OR",
+  form__email_me: "Email me at",
   demo__add_path: "Add a path",
   demo__fill_stops: "Préciser les arrêts de départ / arrivée",
   demo__choose_path: "Choose a path for the widget",

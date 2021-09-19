@@ -17,6 +17,8 @@ export default {
   form__required_field: "Champ requis",
   form__invalid_email: "Email invalide",
   form__too_long: "Le message est trop long",
+  form__or: "OU",
+  form__email_me: "Envoyez-moi un mail à",
   demo__add_path: "Créer un trajet",
   demo__fill_stops: "Préciser les arrêts de départ / arrivée",
   demo__choose_path: "Choisir un trajet pour le widget",
