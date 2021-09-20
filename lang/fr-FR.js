@@ -37,7 +37,7 @@ export default {
   demo__consume_bottle: "Consommer une bouteille",
   demo__delete_bottle: "Supprimer une bouteille",
   demo__no_video: "Impossible de lire la vidéo",
-  grtw__story: "Cette application permet d'enregistrer vos trajets quotidiens en bus pour ensuite vous afficher les temps de passage des bus directement sur votre écran d'accueil.",
+  grtw__story: "Cette application permet d'enregistrer vos trajets quotidiens en bus pour ensuite afficher les temps de passage des bus directement sur votre écran d'accueil.",
   grtw__subtitle: "Horaires en temps réel des bus de Besançon (25)",
   cavity__story: "Une application qui permet la gestion de son stock de vins, afin de toujours trouver la bonne bouteille pour chaque occasion.",
   cavity__subtitle: "Gestionnaire de cave à vin",
