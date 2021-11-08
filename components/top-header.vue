@@ -18,7 +18,7 @@
             </a>
           </v-col>
           <v-col v-ripple cols="4">
-            <a class="text--primary" href="/resume/resume.html">
+            <a class="text--primary" :href="pdfLink">
               <v-icon class="d-block mx-auto" x-large>{{
                 mdiFileOutline
               }}</v-icon>
@@ -50,7 +50,15 @@ export default {
       mdiGithub,
       mdiFileOutline,
       mdiSend,
+      lang: localStorage.getItem("lang"),
     };
+  },
+  computed: {
+    pdfLink() {
+      return this.lang === "fr"
+        ? "/resume/resume.html"
+        : "/resume/resume-en.html";
+    },
   },
 };
 </script>

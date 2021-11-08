@@ -21,6 +21,7 @@
       <contact-form @close="contactDialog = false" />
     </v-dialog>
     <top-header @open-contact="contactDialog = true" />
+    <lang-select />
     <project-list @show-project="showProject($event)" />
   </div>
 </template>
@@ -29,10 +30,6 @@
 import projects from "~/data/projects.js";
 
 export default {
-  transition: {
-    name: "shared-reverse",
-    mode: "",
-  },
   data() {
     return {
       projectDialog: {
