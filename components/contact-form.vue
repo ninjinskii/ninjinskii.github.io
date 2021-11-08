@@ -106,15 +106,9 @@ export default {
         required: (v) => !!v || this.$t("form__required_field"),
         email: (v) => /\S+@\S+\.\S+/.test(v) || this.$t("form__invalid_email"),
         max: (v) =>
-          v.length <= this.messageMaxSize || this.$t("form__too_long"),
+          v?.length <= this.messageMaxSize || this.$t("form__too_long"),
       },
     };
-  },
-  watch: {
-    fullName(val) {
-      console.log("fullname");
-      console.log(val.substring(0, 100));
-    },
   },
   methods: {
     closeSelf() {
