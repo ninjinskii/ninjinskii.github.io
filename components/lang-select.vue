@@ -1,5 +1,5 @@
 <template>
-  <v-btn-toggle v-model="language" class="ml-sm-8">
+  <v-btn-toggle v-model="language" class="ml-6">
     <v-btn>
       <v-img contain src="/images/fr.svg" />
     </v-btn>
