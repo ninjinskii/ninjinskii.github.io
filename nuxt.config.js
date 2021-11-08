@@ -27,7 +27,7 @@ module.exports = {
   loading: { color: "#ffffff" },
   css: [{ src: "@/assets/css/main.css" }],
   // plugins
-  modules: ["@nuxtjs/i18n", "@nuxtjs/axios", "cookie-universal-nuxt"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/axios"],
   buildModules: ["@nuxtjs/vuetify"],
   build: {
     extend(config, ctx) {
