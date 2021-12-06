@@ -12,8 +12,10 @@
 <script>
 export default {
   data() {
+    const lang = localStorage.getItem("lang") || "fr";
+
     return {
-      language: localStorage.getItem("lang") === "fr" ? 0 : 1,
+      language: lang === "fr" ? 0 : 1,
     };
   },
   watch: {
