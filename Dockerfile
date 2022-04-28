@@ -1,4 +1,4 @@
-FROM node:16.8.0-buster-slim as development
+FROM node:16.8.0-buster-slim
 
 ENV NODE_ENV=development
 ENV PATH=/app/node_modules/.bin:$PATH
