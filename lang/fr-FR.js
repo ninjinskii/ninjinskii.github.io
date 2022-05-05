@@ -43,4 +43,6 @@ export default {
   grtw__subtitle: "Horaires en temps réel des bus de Besançon (25)",
   cavity__story: "Une application qui permet la gestion de son stock de vins, afin de toujours trouver la bonne bouteille pour chaque occasion.",
   cavity__subtitle: "Gestionnaire de cave à vin",
+  cavity_backend__story: "Une API REST utilisée pour stocker les données des utilisateurs de l'application mobile Cavity et restaurer des sauvegardes de cave à vin sur différents appareils.",
+  cavity_backend__subtitle: "Serveur de sauvegarde de données utilisateur",
 };

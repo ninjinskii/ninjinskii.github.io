@@ -11,10 +11,12 @@
         />
       </v-col>
       <v-col>
-        <h2 class="mb-n3 text-center text-md-left" style="width: 100%">
+        <h2 class="text-center text-md-left" style="width: 100%">
           {{ project.name }}
         </h2>
-        <div class="text-overline text--disabled text-center text-md-left">
+        <div
+          class="text-overline text--disabled text-center text-md-left baseline mb-2"
+        >
           {{ $t(project.subtitle) }}
         </div>
         <v-chip-group column>
@@ -26,7 +28,10 @@
             {{ techno }}
           </v-chip>
         </v-chip-group>
-        <p class="text--medium text-justify text-sm-left">
+        <p
+          class="text--medium text-justify text-sm-left"
+          style="max-width: 900px"
+        >
           {{ $t(project.story) }}
         </p>
         <v-btn class="mt-4" outlined :href="project.code" target="blank">
@@ -35,7 +40,12 @@
             {{ mdiOpenInNew }}
           </v-icon>
         </v-btn>
-        <v-btn class="mt-4 ml-sm-4" outlined @click="$emit('show-project')">
+        <v-btn
+          v-if="project.demo"
+          class="mt-4 ml-sm-4"
+          outlined
+          @click="$emit('show-project')"
+        >
           {{ $t("show__demo") }}
         </v-btn>
         <v-btn
@@ -79,3 +89,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.baseline {
+  line-height: 0px;
+}
+</style>

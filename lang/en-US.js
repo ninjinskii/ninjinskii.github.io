@@ -43,4 +43,6 @@ export default {
   grtw__subtitle: "Real time bus schedules for Besançon (25)",
   cavity__story: "A stock management app for wine cellars, that lets you always pick the right bottle at the right time.",
   cavity__subtitle: "Cellar manager",
+  cavity_backend__story: "A REST API that allow to store Cavity user's data and get them back on any other device.",
+  cavity_backend__subtitle: "User backup server",
 };
