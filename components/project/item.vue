@@ -41,6 +41,7 @@
         <v-btn
           v-if="project.playstore"
           class="mt-4 ml-sm-4"
+          color="primary"
           outlined
           :href="project.playstore"
           target="blank"
