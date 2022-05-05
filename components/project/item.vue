@@ -15,7 +15,7 @@
           {{ project.name }}
         </h2>
         <div
-          class="text-overline text--disabled text-center text-md-left baseline mb-2"
+          class="text-overline text--disabled text-center text-md-left baseline mb-2 mt-n2"
         >
           {{ $t(project.subtitle) }}
         </div>
@@ -89,9 +89,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.baseline {
-  line-height: 0px;
-}
-</style>

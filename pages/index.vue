@@ -23,6 +23,7 @@
     <top-header @open-contact="contactDialog = true" />
     <lang-select />
     <project-list @show-project="showProject($event)" />
+    <bottom-footer class="mt-14" />
   </div>
 </template>
 
