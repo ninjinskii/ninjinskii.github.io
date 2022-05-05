@@ -62,6 +62,11 @@ module.exports = {
     defaultAssets: false,
     theme: {
       dark: true,
+      themes: {
+        dark: {
+          error: "#FB8C00",
+        },
+      },
     },
   },
 };
