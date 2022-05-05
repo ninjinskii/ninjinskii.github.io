@@ -1,5 +1,27 @@
-// TODO: replace text with translatable keys
 export default [
+  {
+    shortname: "cavity",
+    name: "Cavity",
+    subtitle: "cavity__subtitle",
+    thumbnail: "/images/logo-cavity.png",
+    technos: ["Android", "Kotlin", "SQLite", "XML", "CI/CD"],
+    story: "cavity__story",
+    code: "https://github.com/ninjinskii/Cavity",
+    demo: {
+      video: "/videos/cavity.mp4",
+      timestamps: [
+        { when: 0, desc: "demo__display_wines" },
+        { when: 9, desc: "demo__add_wine" },
+        { when: 36, desc: "demo__add_bottle" },
+        { when: 80, desc: "demo__display_bottle" },
+        { when: 91, desc: "demo__search_bottle" },
+        { when: 106, desc: "demo__consume_bottle" },
+        { when: 129, desc: "demo__show_history" },
+        { when: 147, desc: "demo__show_stats" },
+        { when: 169, desc: "demo__delete_wine" },
+      ],
+    },
+  },
   {
     shortname: "grtw",
     name: "Ginko Real Time Widget",
@@ -21,29 +43,6 @@ export default [
         { when: 70, desc: "demo__fill_stops" },
         { when: 81, desc: "demo__change_path" },
         { when: 98, desc: "demo__delete_path" },
-      ],
-    },
-  },
-  {
-    shortname: "cavity",
-    name: "Cavity",
-    subtitle: "cavity__subtitle",
-    thumbnail: "/images/logo-cavity.png",
-    technos: ["Android", "Java", "SQLite", "XML"],
-    story: "cavity__story",
-    code: "https://github.com/ninjinskii/JavaCavity",
-    demo: {
-      video:
-        "https://user-images.githubusercontent.com/31962617/133339957-7a56500a-65b1-4343-999f-ad7c653cf391.mp4",
-      timestamps: [
-        { when: 0, desc: "demo__display_wines" },
-        { when: 9, desc: "demo__delete_wine" },
-        { when: 12, desc: "demo__add_wine" },
-        { when: 46, desc: "demo__search_wine" },
-        { when: 57, desc: "demo__add_bottle" },
-        { when: 115, desc: "demo__display_bottle" },
-        { when: 134, desc: "demo__consume_bottle" },
-        { when: 159, desc: "demo__delete_bottle" },
       ],
     },
   },
