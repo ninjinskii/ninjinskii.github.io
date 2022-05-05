@@ -8,6 +8,7 @@ export default {
   home__title: "Software Developer",
   show__demo: "Demo",
   show__code: "Code",
+  show__playstore: "Show in Google Play Store",
   form__success: "Message sent.",
   form__error: "An error occured.",
   form__full_name: "Full name",

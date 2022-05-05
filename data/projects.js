@@ -21,6 +21,8 @@ export default [
         { when: 169, desc: "demo__delete_wine" },
       ],
     },
+    playstore:
+      "https://play.google.com/store/apps/details?id=com.louis.app.cavity",
   },
   {
     shortname: "grtw",
@@ -45,5 +47,6 @@ export default [
         { when: 98, desc: "demo__delete_path" },
       ],
     },
+    playstore: null,
   },
 ];

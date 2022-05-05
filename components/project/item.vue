@@ -38,6 +38,18 @@
         <v-btn class="mt-4 ml-sm-4" outlined @click="$emit('show-project')">
           {{ $t("show__demo") }}
         </v-btn>
+        <v-btn
+          v-if="project.playstore"
+          class="mt-4 ml-sm-4"
+          outlined
+          :href="project.playstore"
+          target="blank"
+        >
+          <v-icon left>
+            {{ mdiGooglePlay }}
+          </v-icon>
+          {{ $t("show__playstore") }}
+        </v-btn>
         <v-divider v-if="!last" class="mt-16" />
       </v-col>
     </v-row>
@@ -45,7 +57,7 @@
 </template>
 
 <script>
-import { mdiOpenInNew } from "@mdi/js";
+import { mdiOpenInNew, mdiGooglePlay } from "@mdi/js";
 
 export default {
   props: {
@@ -61,6 +73,7 @@ export default {
   data() {
     return {
       mdiOpenInNew,
+      mdiGooglePlay,
     };
   },
 };
