@@ -31,7 +31,6 @@
               <video
                 ref="video"
                 :src="project.demo.video"
-                type="video/mp4"
                 height="540"
                 width="260"
                 autoplay
