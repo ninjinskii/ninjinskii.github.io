@@ -21,6 +21,10 @@ module.exports = {
         name: "description",
         content: "Bailly Louis's portfolio",
       },
+      {
+        name: "og:image",
+        content: "/images/logo-cavity.png",
+      },
     ],
     link: [{ rel: "favicon", type: "image/x-icon", href: "favicon.ico" }],
   },
