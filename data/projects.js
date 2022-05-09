@@ -8,7 +8,8 @@ export default [
     story: "cavity__story",
     code: "https://github.com/ninjinskii/Cavity",
     demo: {
-      video: "/videos/cavity.mp4",
+      video:
+        "https://user-images.githubusercontent.com/31962617/167398025-647f7166-98ae-4355-858f-07b4c99b9e61.mp4",
       timestamps: [
         { when: 0, desc: "demo__display_wines" },
         { when: 9, desc: "demo__add_wine" },
