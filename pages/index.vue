@@ -46,6 +46,8 @@ export default {
     },
   },
   created() {
+    this.setDefaultLanguage();
+
     const query = this.$route.query.project;
     if (query) {
       const project = projects.find(
@@ -58,6 +60,14 @@ export default {
     }
   },
   methods: {
+    setDefaultLanguage() {
+      const lang = localStorage.getItem("lang");
+
+      // User visits the page for the first time
+      if (lang === null) {
+        localStorage.setItem("lang", "fr");
+      }
+    },
     showProject(project) {
       this.projectDialog.project = project;
       this.projectDialog.show = true;
