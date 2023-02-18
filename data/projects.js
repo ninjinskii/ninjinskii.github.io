@@ -30,7 +30,7 @@ export default [
     name: "Cavity backend",
     subtitle: "cavity_backend__subtitle",
     thumbnail: "/images/logo-cavity-backend.png",
-    technos: ["Deno", "Typescript", "PostgreSQL", "Docker"],
+    technos: ["Deno", "Typescript", "Supabase", "PostgreSQL", "Docker"],
     story: "cavity_backend__story",
     code: "https://github.com/ninjinskii/Cavity-backend",
     demo: null,
