@@ -1,13 +1,6 @@
 # Bailly Louis's portfolio
 
-## Run the project on your machine
-Install Git LFS on your machine.
-
-Then run:
-```bash
-  git lfs install
-```
-
+## Run the project locally
 Make sure [traefik](https://github.com/ninjinskii/traefik) is running.
 
 ```bash
