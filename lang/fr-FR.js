@@ -45,4 +45,8 @@ export default {
   cavity__subtitle: "Gestionnaire de cave à vin",
   cavity_backend__story: "Une API REST utilisée pour stocker les données des utilisateurs de l'application mobile Cavity et restaurer des sauvegardes de cave à vin sur différents appareils.",
   cavity_backend__subtitle: "Serveur de sauvegarde de données utilisateur",
+  denorm__subtitle: "ORM pour Deno et Postgres",
+  denorm__story: "ORM pensé pour simplifier le développement d'API REST avec Deno et Postgres, avec un nombre de dépendances minimal",
+  revealeit__subtitle: "Jeu multijoueur par navigateur",
+  revealeit__story: "Un jeu de plateau pour 2 joueurs utilisant les websockets pour apprendre Vue 3",
 };

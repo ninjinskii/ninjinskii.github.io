@@ -41,10 +41,19 @@
           </v-icon>
         </v-btn>
         <v-btn
-          v-if="project.demo"
+          v-if="project.demo && !project.demoAsLink"
           class="mt-4 ml-sm-4"
           outlined
           @click="$emit('show-project')"
+        >
+          {{ $t("show__demo") }}
+        </v-btn>
+        <v-btn
+          v-if="project.demo && project.demoAsLink"
+          class="mt-4 ml-sm-4"
+          outlined
+          :href="project.demo"
+          target="_blank"
         >
           {{ $t("show__demo") }}
         </v-btn>

@@ -45,4 +45,8 @@ export default {
   cavity__subtitle: "Cellar manager",
   cavity_backend__story: "A REST API that allow to store Cavity user's data and get them back on any other device.",
   cavity_backend__subtitle: "User backup server",
+  denorm__subtitle: "ORM library for Deno and Postgres",
+  denorm__story: "An Deno ORM for Postgres well suited for REST API with very little dependency.",
+  revealeit__subtitle: "Multiplayer game",
+  revealeit__story: "A 2 players board game using web sockets to learn Vue 3",
 };
