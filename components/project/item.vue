@@ -65,7 +65,7 @@
           :href="project.fdroidstore"
           target="blank"
         >
-          <img src="/static/images/logo-fdroid.svg" />
+          <img src="/images/logo-fdroid.svg" />
           {{ $t("show__fdroidstore") }}
         </v-btn>
         <v-divider v-if="!last" class="mt-16" />
@@ -96,3 +96,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+img {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+}
+</style>

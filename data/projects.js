@@ -23,8 +23,7 @@ export default [
       ],
     },
     demoAsLink: false,
-    fdroidstore:
-      "https://f-droid.org/fr/packages/com.louis.app.cavity/",
+    fdroidstore: "https://f-droid.org/fr/packages/com.louis.app.cavity/",
   },
   {
     shortname: "cavity-backend",
