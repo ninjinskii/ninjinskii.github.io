@@ -8,7 +8,7 @@ export default {
   home__title: "Software Developer",
   show__demo: "Demo",
   show__code: "Code",
-  show__playstore: "Google Play Store",
+  show__fdroidstore: "F-Droid store",
   form__success: "Message sent.",
   form__error: "An error occured.",
   form__full_name: "Full name",

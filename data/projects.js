@@ -23,8 +23,8 @@ export default [
       ],
     },
     demoAsLink: false,
-    playstore:
-      "https://play.google.com/store/apps/details?id=com.louis.app.cavity",
+    fdroidstore:
+      "https://f-droid.org/fr/packages/com.louis.app.cavity/",
   },
   {
     shortname: "cavity-backend",
@@ -36,7 +36,7 @@ export default [
     code: "https://github.com/ninjinskii/Cavity-backend",
     demo: null,
     demoAsLink: false,
-    playstore: null,
+    fdroidstore: null,
   },
   {
     shortname: "denorm",
@@ -48,7 +48,7 @@ export default [
     code: "https://github.com/ninjinskii/denorm",
     demo: null,
     demoAsLink: false,
-    playstore: null,
+    fdroidstore: null,
   },
   {
     shortname: "revealeit",
@@ -60,7 +60,7 @@ export default [
     code: "https://github.com/ninjinskii/revealeit",
     demo: "https://remarkable-klepon-7e756a.netlify.app/",
     demoAsLink: true,
-    playstore: null,
+    fdroidstore: null,
   },
   {
     shortname: "grtw",
@@ -86,6 +86,6 @@ export default [
       ],
     },
     demoAsLink: false,
-    playstore: null,
+    fdroidstore: null,
   },
 ];

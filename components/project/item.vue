@@ -58,17 +58,15 @@
           {{ $t("show__demo") }}
         </v-btn>
         <v-btn
-          v-if="project.playstore"
+          v-if="project.fdroidstore"
           class="mt-4 ml-sm-4"
           color="primary"
           outlined
-          :href="project.playstore"
+          :href="project.fdroidstore"
           target="blank"
         >
-          <v-icon left>
-            {{ mdiGooglePlay }}
-          </v-icon>
-          {{ $t("show__playstore") }}
+          <img src="/static/images/logo-fdroid.svg" />
+          {{ $t("show__fdroidstore") }}
         </v-btn>
         <v-divider v-if="!last" class="mt-16" />
       </v-col>
