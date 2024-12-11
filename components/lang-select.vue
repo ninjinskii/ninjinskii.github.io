@@ -24,7 +24,6 @@ export default {
 
       localStorage.setItem("lang", locale);
       this.$i18n.setLocale(locale);
-      // this.$cookies.set("lang", locale, { path: "/" });
     },
   },
 };
